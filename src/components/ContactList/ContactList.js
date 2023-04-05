@@ -6,7 +6,7 @@ import { getContacts, getValueFilter } from "redux/selectors"
 
 
 
-const getVisibleContacts = (contacts, valueFilter) => {
+const getVisibleContacts = (contacts, valueFilter = '') => {
     if(!valueFilter) {
         return contacts;
       }

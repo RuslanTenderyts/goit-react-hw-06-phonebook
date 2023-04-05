@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {FilterLabel} from "./Filter.styled"
 import { useSelector, useDispatch } from "react-redux";
 import { setValueFilter } from "redux/filterSlice";
@@ -12,10 +11,10 @@ const Filter = () =>  {
     const dispatch = useDispatch(); 
     const handlerFilterChanch = (evt) => { 
         const value = evt.target.value.toLowerCase();
-        console.log(value)
         dispatch(setValueFilter(value));
     };
     const valueFilter = useSelector(getValueFilter);
+    
     return (
     
         <FilterLabel>
@@ -34,9 +33,3 @@ const Filter = () =>  {
 }
 
 export default Filter;
-
-
-PropTypes.Filter = {
-    value: PropTypes.string.isRequired,
-    onChange: PropTypes.func.isRequired,  
-}
